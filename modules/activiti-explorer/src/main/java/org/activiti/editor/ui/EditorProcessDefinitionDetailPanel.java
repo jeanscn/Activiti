@@ -345,7 +345,7 @@ public class EditorProcessDefinitionDetailPanel extends DetailPanel {
     String processName = modelData.getName() + ".bpmn20.xml";
     Deployment deployment = repositoryService.createDeployment()
             .name(modelData.getName())
-            .addString(processName, new String(bpmnBytes))
+            .addString(processName, new String(bpmnBytes,"UTF-8"))
             .deploy();
 
     ExplorerApp.get().getViewManager().showDeploymentPage(deployment.getId());
