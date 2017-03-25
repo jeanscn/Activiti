@@ -338,7 +338,7 @@ public class EditorProcessDefinitionDetailPanel extends DetailPanel {
     deployModelPopupWindow.showPopupWindow();
   }
   
-  protected void deployModelerModel(final ObjectNode modelNode) {
+  protected void deployModelerModel(final ObjectNode modelNode) throws Exception  {
     BpmnModel model = new BpmnJsonConverter().convertToBpmnModel(modelNode);
     byte[] bpmnBytes = new BpmnXMLConverter().convertToXML(model);
     
